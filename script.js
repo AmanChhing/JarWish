@@ -77,10 +77,7 @@ function playsongornot(data)
 		}
 		
 	}
-	else
-	{
-		outputBot.textContent = "I'm sorry, for now i can play only music. tell me to play anything and i will do so.
-	}
+	
 }
 
 
