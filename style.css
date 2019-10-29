@@ -61,7 +61,9 @@ button {
   will-change: transform, filter;
   transition: all 0.3s ease-out;
 }
-
+p {
+  padding: .3em 0em 0em 1.2em;
+}
 button .fa {
   font-size: 130px;
   line-height: 200px;
