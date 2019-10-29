@@ -85,32 +85,45 @@ function playsong()
 	//gapi.load('466240921973-3ig72n53f5p11fluka1ev4f5el3qm4ca.apps.googleusercontent.com', search)
 	var searchTerm = window.songpicked
  	var apiKey = "AIzaSyAymbD4C8RpXxAYNuUMvIl47nQY5hahEg4"
-  	gapi.client.init({
-    	'apiKey': apiKey, 
-    	'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest']
-  	}).then(function() {
-    	return gapi.client.youtube.search.list({
-      	q: searchTerm,
-      	part: 'snippet'
-    	});
-  	}).then(function(response) {
-  	var searchResult = response.result;
-    	//$('#search-results').append(JSON.stringify(searchResult, null, 4))
-  	//console.log(searchResult.items[0])
-    	var firstVideo = searchResult.items[0]
-	//alert(firstVideo.id.videoId)
-	url = "https://youtube.com/watch?v="+firstVideo.id.videoId
-	window.open(
-    	url, "JARWISH-YouTube API",
-    	"height=450,width=650,modal=yes,alwaysRaised=yes");
+  	gapi.client.init
+	({
+    		'apiKey': apiKey, 
+    		'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest']
+  	}).then(function()
+	{
+    		return gapi.client.youtube.search.list
+		({
+      			q: searchTerm,
+      			part: 'snippet'
+    		});
+  	}).then(function(response) 
+		{
+  			var searchResult = response.result;
+    			//$('#search-results').append(JSON.stringify(searchResult, null, 4))
+  			//console.log(searchResult.items[0])
+    			var firstVideo = searchResult.items[0]
+			//alert(firstVideo.id.videoId)
+			url = "https://youtube.com/watch?v="+firstVideo.id.videoId
+			var ifrm = document.createElement("iframe");
+        		ifrm.setAttribute("src", url);
+			ifrm.setAttribute("id", "target");
+        		ifrm.style.width = "600";
+        		ifrm.style.height = "450";
+			ifrm.style.align= "middle";
+        		document.body.appendChild(ifrm);
     	//firstVideo.url = 'https://youtube.com/watch?v=${firstVideo.id.videoId}'
 	//alert(firstVideo.url)
-    //$('#first-video').text(firstVideo.url).attr('href', firstVideo.url)
-    //$('#first-video-title').text(firstVideo.snippet.title)
-    //$('#first-video-description').text(firstVideo.snippet.description)
-  });
+    	//$('#first-video').text(firstVideo.url).attr('href', firstVideo.url)
+    	//$('#first-video-title').text(firstVideo.snippet.title)
+    	//$('#first-video-description').text(firstVideo.snippet.description)
+  		});
 
 }
+
+function removeIFrame() {
+        var frame = document.getElementById("target");
+        frame.parentNode.removeChild(frame);
+    }
 
 
 
