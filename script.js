@@ -75,7 +75,15 @@ function playsongornot(data)
 			gapi.load('client', playsong)
 			
 		}
+		else
+		{
+		outputBot.textContent = "I'm sorry, i couldn't hear the song name properly, please repeat again."
+		}
 		
+	}
+	else
+	{
+	outputBot.textContent = "I'm sorry, for now i can play only music. tell me to play anything and i will do so."
 	}
 	
 }
