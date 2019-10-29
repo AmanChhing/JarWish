@@ -71,11 +71,15 @@ function playsongornot(data)
 		}
 		if(window.songpicked != "")
 		{
-			outputBot.textContent = "Sure Sir, Playing the song : " + window.songpicked
+			outputBot.textContent = "Sure, Playing the song : " + window.songpicked
 			gapi.load('client', playsong)
 			
 		}
 		
+	}
+	else
+	{
+		outputBot.textContent = "I'm sorry, for now i can play only music. tell me to play anything and i will do so.
 	}
 }
 
