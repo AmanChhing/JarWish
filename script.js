@@ -33,11 +33,6 @@ recognition.addEventListener('result', (e) => {
 
   outputYou.textContent = text;
   getjsonfile()
-  //var json_obj = JSON.parse(Get(url));
-  //alert(json_obj.topScoringIntent)
-  //$.getJSON(url, function(data) {
-   // alert(data.topScoringIntent.intent)
-	//});
   console.log('Confidence: ' + e.results[0][0].confidence);
 });
 
@@ -58,10 +53,8 @@ function synthVoice(text) {
 
 function getjsonfile() 
 {
-	//alert(url+outputYou.textContent)
 	$.getJSON(url+outputYou.textContent, function(data) {
-    window.topscoringintent = data.topScoringIntent.intent.toString();
-	//alert(window.topscoringintent)
+    	window.topscoringintent = data.topScoringIntent.intent.toString();
 	playsongornot(data)
 	});
 }
@@ -70,8 +63,7 @@ function playsongornot(data)
 {
 	if(window.topscoringintent.toLowerCase() === "play")
 	{
-		//alert(data["entities"][0].entity)
-		//alert(data.entities.length.toString())
+
 		for(var i = 0; i < data.entities.length ; i++)
 		{
 			window.songpicked += data["entities"][i].entity.toString() + " "
@@ -80,67 +72,38 @@ function playsongornot(data)
 		{
 			outputBot.textContent = "Sure Sir, Playing the song : " + window.songpicked
 			playsong()
+			gapi.load('client', search)
 		}
-		//alert(window.songpicked)
+		
 	}
 }
 
+
+
 function playsong()
 {
-	//var res = encodeURI(window.songpicked)
-	var ifrm = document.createElement('iframe');
-	ifrm.setAttribute('id', 'ifrm'); // assign an id
-	ifrm.setAttribute('height', '450'); // set height
-	ifrm.setAttribute('width', '600'); // set width
-	ifrm.setAttribute('allow', 'autoplay'); // set width
-	ifrm.setAttribute('gesture', 'media'); // set width
-	ifrm.setAttribute('frameborder', '0'); // set width
-	ifrm.setAttribute('encrypted-media', 'allowfullscreen'); // set width
-	var youtubeurl = "https://www.youtube.com/embed?listType=search&list="+window.songpicked
-	document.body.appendChild(ifrm); // to place at end of document
-	
-	// to place before another page element
-	//var el = document.getElementById('marker');
-	//el.parentNode.insertBefore(ifrm, el);
+	var searchTerm = window.songpicked
+ 	var apiKey = "AIzaSyAymbD4C8RpXxAYNuUMvIl47nQY5hahEg4"
+  	gapi.client.init({
+    	'apiKey': apiKey, 
+    	'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest']
+  	}).then(function() {
+    	return gapi.client.youtube.search.list({
+      	q: searchTerm,
+      	part: 'snippet'
+    	});
+  	}).then(function(response) {
+  	var searchResult = response.result;
+    //$('#search-results').append(JSON.stringify(searchResult, null, 4))
+  	//console.log(searchResult.items[0])
+    	var firstVideo = searchResult.items[0]
+    	firstVideo.url = 'https://youtube.com/watch?v=${firstVideo.id.videoId}'
+	alert(firstVideo.url)
+    //$('#first-video').text(firstVideo.url).attr('href', firstVideo.url)
+    //$('#first-video-title').text(firstVideo.snippet.title)
+    //$('#first-video-description').text(firstVideo.snippet.description)
+  });
 
-	// assign url
-	ifrm.setAttribute('src', youtubeurl);
-	
-	eventFire(document.getElementById('iframe'), 'click');
-	//clickframe()
-	//var res = encodeURI(window.songpicked)
-    	//var youtubeUrl = "https://www.youtube.com/results?search_query=" + res
-	//alert(youtubeUrl)
-    	//var getHTML    = file_get_contents(youtubeUrl)
-	//$.post("index.php", { url: youtubeUrl }, function(data) {
-	//alert(data.toString())
-    	//window.youtubeoplist = data        
-	//});
-	//alert(window.youtubeoplist)
-    	//var pattern   = '/<a href="\/watch\?v=(.*?)"/i'
-	//var matchs     = window.youtubeoplist.match(pattern)
-	//alert(matchs)
-    	//if(matchs!= "")
-	//{
-       	//	var videoID    = matchs[1]
-	 //  	alert(videoID)
-    	//}
-}
-
-function eventFire(el, etype){
-  if (el.fireEvent) {
-    el.fireEvent('on' + etype);
-  } else {
-    var evObj = document.createEvent('Events');
-    evObj.initEvent(etype, true, false);
-    el.dispatchEvent(evObj);
-  }
-}
-
-function clickframe()
-{
-	$('#ifrm').trigger("click")
-	//document.getElementById("ifrm").click()
 }
 
 
