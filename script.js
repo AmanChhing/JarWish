@@ -95,10 +95,14 @@ function playsong()
     	});
   	}).then(function(response) {
   	var searchResult = response.result;
-    //$('#search-results').append(JSON.stringify(searchResult, null, 4))
+    	//$('#search-results').append(JSON.stringify(searchResult, null, 4))
   	//console.log(searchResult.items[0])
     	var firstVideo = searchResult.items[0]
-	alert(firstVideo.id.videoId)
+	//alert(firstVideo.id.videoId)
+	url = "https://youtube.com/watch?v="+firstVideo.id.videoId
+	window.open(
+    	url, "JARWISH-YouTube API",
+    	"height=200,width=200,modal=yes,alwaysRaised=yes");
     	//firstVideo.url = 'https://youtube.com/watch?v=${firstVideo.id.videoId}'
 	//alert(firstVideo.url)
     //$('#first-video').text(firstVideo.url).attr('href', firstVideo.url)
