@@ -104,9 +104,9 @@ function playsong()
     			var firstVideo = searchResult.items[0]
 			//alert(firstVideo.id.videoId)
 			//https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1
-			//url = "https://www.youtube.com/embed/"+(firstVideo.id.videoId).toString()+"?autoplay=1"
+			var url = "https://www.youtube.com/embed/"+(firstVideo.id.videoId).toString()+"?autoplay=1"
 			//var videoid = "HtvwcJLqxE0"
-			var url = "https://www.youtube.com/embed/"+videoid+"?autoplay=1"
+			//var url = "https://www.youtube.com/embed/"+videoid+"?autoplay=1"
 			var ifrm = document.createElement("iframe")
         		ifrm.setAttribute("src", url)
 			ifrm.setAttribute("id", "target")
