@@ -112,6 +112,9 @@ function playsong()
 			var ifrm = document.createElement("iframe")
         		ifrm.setAttribute("src", url)
 			ifrm.setAttribute("allow","autoplay")
+			ifrm.setAttribute("frameborder","0")
+			ifrm.setAttribute('allowFullScreen', '')
+			ifrm.setAttribute('picture-in-picture', '')
 			ifrm.setAttribute("id", "target")
         		ifrm.style.width = "80%"
         		ifrm.style.height = "75%"
