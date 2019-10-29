@@ -72,7 +72,7 @@ function playsongornot(data)
 		{
 			outputBot.textContent = "Sure Sir, Playing the song : " + window.songpicked
 			playsong()
-			gapi.load('client', search)
+			
 		}
 		
 	}
@@ -82,6 +82,7 @@ function playsongornot(data)
 
 function playsong()
 {
+	gapi.load('466240921973-3ig72n53f5p11fluka1ev4f5el3qm4ca.apps.googleusercontent.com', search)
 	var searchTerm = window.songpicked
  	var apiKey = "AIzaSyAymbD4C8RpXxAYNuUMvIl47nQY5hahEg4"
   	gapi.client.init({
