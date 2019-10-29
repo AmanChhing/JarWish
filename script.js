@@ -104,14 +104,20 @@ function playsong()
     			var firstVideo = searchResult.items[0]
 			//alert(firstVideo.id.videoId)
 			//https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1
-			url = "https://www.youtube.com/embed/"+firstVideo.id.videoId+"?autoplay=1"
-			var ifrm = document.createElement("iframe");
-        		ifrm.setAttribute("src", url);
-			ifrm.setAttribute("id", "target");
-        		ifrm.style.width = "800";
-        		ifrm.style.height = "550";
-			ifrm.style.align= "middle";
-        		document.body.appendChild(ifrm);
+			//url = "https://www.youtube.com/embed/"+(firstVideo.id.videoId).toString()+"?autoplay=1"
+			//var videoid = "HtvwcJLqxE0"
+			var url = "https://www.youtube.com/embed/"+videoid+"?autoplay=1"
+			var ifrm = document.createElement("iframe")
+        		ifrm.setAttribute("src", url)
+			ifrm.setAttribute("id", "target")
+        		ifrm.style.width = "800px"
+        		ifrm.style.height = "300px"
+			ifrm.style.position = 'relative'
+			ifrm.style.top ='5%'
+			ifrm.style.left='20%'
+        		document.body.appendChild(ifrm)
+			var divFirst = document.getElementById("target")
+			divFirst.scrollIntoView()
     	//firstVideo.url = 'https://youtube.com/watch?v=${firstVideo.id.videoId}'
 	//alert(firstVideo.url)
     	//$('#first-video').text(firstVideo.url).attr('href', firstVideo.url)
