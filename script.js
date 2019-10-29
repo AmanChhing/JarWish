@@ -116,8 +116,8 @@ function playsong()
 			ifrm.setAttribute('allowFullScreen', '')
 			ifrm.setAttribute('picture-in-picture', '')
 			ifrm.setAttribute("id", "target")
-        		ifrm.style.width = "80%"
-        		ifrm.style.height = "75%"
+        		ifrm.style.width = "70%"
+        		ifrm.style.height = "150%"
 			ifrm.style.position = 'relative'
 			ifrm.style.top ='20%'
 			ifrm.style.left='15%'
