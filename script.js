@@ -111,14 +111,15 @@ function playsong()
 			//var url = "https://www.youtube.com/embed/"+videoid+"?autoplay=1"
 			var ifrm = document.createElement("iframe")
         		ifrm.setAttribute("src", url)
+			ifrm.setAttribute("allow","autoplay")
 			ifrm.setAttribute("id", "target")
-        		ifrm.style.width = "80%"
-        		ifrm.style.height = "400px"
+        		ifrm.style.width = "70%"
+        		ifrm.style.height = "50%"
 			ifrm.style.position = 'relative'
 			ifrm.style.top ='10%'
 			ifrm.style.left='15%'
 			ifrm.style.bottom ='5%'
-			ifrm.style.right='8%'
+			ifrm.style.right='11%'
         		document.body.appendChild(ifrm)
 			var divFirst = document.getElementById("target")
 			divFirst.scrollIntoView()
