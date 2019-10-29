@@ -1,14 +1,14 @@
 
 
-const outputYou = document.querySelector('.output-you');
-const outputBot = document.querySelector('.output-bot');
+var outputYou = document.querySelector('.output-you');
+var outputBot = document.querySelector('.output-bot');
 //const songpickedhtml = document.querySelector('.song-picked');
 var url = "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/0a16fe68-ad90-40c3-83c6-e6cc2250831e?verbose=true&timezoneOffset=0&subscription-key=51f106d2672240958a1f931a8d02eae3&q="
 var topscoringintent = ""
 var songpicked = ""
 var youtubeoplist = ""
-const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-const recognition = new SpeechRecognition();
+var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+var recognition = new SpeechRecognition();
 
 recognition.lang = 'en-US';
 recognition.interimResults = false;
@@ -45,8 +45,8 @@ recognition.addEventListener('error', (e) => {
 });
 
 function synthVoice(text) {
-  const synth = window.speechSynthesis;
-  const utterance = new SpeechSynthesisUtterance();
+  var synth = window.speechSynthesis;
+  var utterance = new SpeechSynthesisUtterance();
   utterance.text = text;
   synth.speak(utterance);
 }
@@ -104,7 +104,8 @@ function playsong()
     			var firstVideo = searchResult.items[0]
 			//alert(firstVideo.id.videoId)
 			//https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1
-			var url = "https://www.youtube.com/embed/"+(firstVideo.id.videoId).toString()+"?autoplay=1"
+			var url = "http://www.youtube.com/embed/"+(firstVideo.id.videoId).toString()+"?autoplay=1"
+			alert(url)
 			//var videoid = "HtvwcJLqxE0"
 			//var url = "https://www.youtube.com/embed/"+videoid+"?autoplay=1"
 			var ifrm = document.createElement("iframe")
