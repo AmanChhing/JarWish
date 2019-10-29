@@ -116,11 +116,11 @@ function playsong()
 			ifrm.setAttribute('allowFullScreen', '')
 			ifrm.setAttribute('picture-in-picture', '')
 			ifrm.setAttribute("id", "target")
-        		ifrm.style.width = "80%"
-        		ifrm.style.height = "350px"
+        		ifrm.style.width = "78%"
+        		ifrm.style.height = "380px"
 			ifrm.style.position = 'relative'
 			ifrm.style.top ='20%'
-			ifrm.style.left='11%'
+			ifrm.style.left='12%'
 			ifrm.style.bottom ='5%'
 			ifrm.style.right='13%'
         		document.body.appendChild(ifrm)
