@@ -61,6 +61,7 @@ function getjsonfile()
 
 function playsongornot(data)
 {
+	
 	if(window.topscoringintent.toLowerCase() === "play")
 	{
 
@@ -104,23 +105,24 @@ function playsong()
     			var firstVideo = searchResult.items[0]
 			//alert(firstVideo.id.videoId)
 			//https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1
-			var url = "https://www.youtube.com/embed/"+(firstVideo.id.videoId).toString()+"?autoplay=1&mute=1&enablejsapi=1"
+			var url = "https://www.youtube.com/embed/"+(firstVideo.id.videoId).toString()+"?autoplay=1&mute=0&enablejsapi=1"
 			//alert(url)
 			//var videoid = "HtvwcJLqxE0"
 			//var url = "https://www.youtube.com/embed/"+videoid+"?autoplay=1"
 			var ifrm = document.createElement("iframe")
         		ifrm.setAttribute("src", url)
 			ifrm.setAttribute("id", "target")
-        		ifrm.style.width = "70%"
-        		ifrm.style.height = "30%"
+        		ifrm.style.width = "75%"
+        		ifrm.style.height = "50%"
 			ifrm.style.position = 'relative'
-			ifrm.style.top ='5%'
-			ifrm.style.left='10%'
+			ifrm.style.top ='10%'
+			ifrm.style.left='15%'
 			ifrm.style.bottom ='5%'
 			ifrm.style.right='10%'
         		document.body.appendChild(ifrm)
 			var divFirst = document.getElementById("target")
 			divFirst.scrollIntoView()
+			window.songpicked = ""
     	//firstVideo.url = 'https://youtube.com/watch?v=${firstVideo.id.videoId}'
 	//alert(firstVideo.url)
     	//$('#first-video').text(firstVideo.url).attr('href', firstVideo.url)
