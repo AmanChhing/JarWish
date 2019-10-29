@@ -102,7 +102,7 @@ function playsong()
 	url = "https://youtube.com/watch?v="+firstVideo.id.videoId
 	window.open(
     	url, "JARWISH-YouTube API",
-    	"height=200,width=200,modal=yes,alwaysRaised=yes");
+    	"height=450,width=650,modal=yes,alwaysRaised=yes");
     	//firstVideo.url = 'https://youtube.com/watch?v=${firstVideo.id.videoId}'
 	//alert(firstVideo.url)
     //$('#first-video').text(firstVideo.url).attr('href', firstVideo.url)
