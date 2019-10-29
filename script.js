@@ -103,12 +103,13 @@ function playsong()
   			//console.log(searchResult.items[0])
     			var firstVideo = searchResult.items[0]
 			//alert(firstVideo.id.videoId)
-			url = "https://youtube.com/watch?v="+firstVideo.id.videoId
+			//https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1
+			url = "https://www.youtube.com/embed/"+firstVideo.id.videoId+"?autoplay=1"
 			var ifrm = document.createElement("iframe");
         		ifrm.setAttribute("src", url);
 			ifrm.setAttribute("id", "target");
-        		ifrm.style.width = "600";
-        		ifrm.style.height = "450";
+        		ifrm.style.width = "800";
+        		ifrm.style.height = "550";
 			ifrm.style.align= "middle";
         		document.body.appendChild(ifrm);
     	//firstVideo.url = 'https://youtube.com/watch?v=${firstVideo.id.videoId}'
