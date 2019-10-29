@@ -62,7 +62,7 @@ button {
   transition: all 0.3s ease-out;
 }
 p {
-  padding: 0em 0em 1em 0em;
+  padding: 1em 0em 1em 1em;
 }
 button .fa {
   font-size: 130px;
