@@ -113,10 +113,10 @@ function playsong()
         		ifrm.setAttribute("src", url)
 			ifrm.setAttribute("allow","autoplay")
 			ifrm.setAttribute("id", "target")
-        		ifrm.style.width = "70%"
-        		ifrm.style.height = "50%"
+        		ifrm.style.width = "80%"
+        		ifrm.style.height = "75%"
 			ifrm.style.position = 'relative'
-			ifrm.style.top ='10%'
+			ifrm.style.top ='20%'
 			ifrm.style.left='15%'
 			ifrm.style.bottom ='5%'
 			ifrm.style.right='11%'
