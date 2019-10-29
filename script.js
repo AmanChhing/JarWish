@@ -98,8 +98,9 @@ function playsong()
     //$('#search-results').append(JSON.stringify(searchResult, null, 4))
   	//console.log(searchResult.items[0])
     	var firstVideo = searchResult.items[0]
+	alert(firstVideo)
     	firstVideo.url = 'https://youtube.com/watch?v=${firstVideo.id.videoId}'
-	alert(firstVideo.url)
+	//alert(firstVideo.url)
     //$('#first-video').text(firstVideo.url).attr('href', firstVideo.url)
     //$('#first-video-title').text(firstVideo.snippet.title)
     //$('#first-video-description').text(firstVideo.snippet.description)
