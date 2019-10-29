@@ -116,13 +116,13 @@ function playsong()
 			ifrm.setAttribute('allowFullScreen', '')
 			ifrm.setAttribute('picture-in-picture', '')
 			ifrm.setAttribute("id", "target")
-        		ifrm.style.width = "72%"
-        		ifrm.style.height = "250px"
+        		ifrm.style.width = "75%"
+        		ifrm.style.height = "300px"
 			ifrm.style.position = 'relative'
 			ifrm.style.top ='20%'
-			ifrm.style.left='15%'
+			ifrm.style.left='14%'
 			ifrm.style.bottom ='5%'
-			ifrm.style.right='11%'
+			ifrm.style.right='12%'
         		document.body.appendChild(ifrm)
 			var divFirst = document.getElementById("target")
 			divFirst.scrollIntoView()
