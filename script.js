@@ -174,7 +174,8 @@ function playsong()
 function removeIFrame() {
 	window.songpicked = ""
         var frame = document.getElementById("block");
-        frame.parentNode.removeChild(div);
+        //frame.parentNode.removeChild(div);
+	frame.removeChild(target);
     }
 
 
