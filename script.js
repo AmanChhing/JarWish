@@ -120,6 +120,10 @@ function playsong()
 		var ifrm = document.createElement("iframe")
         	ifrm.setAttribute("src", url)
 		ifrm.setAttribute("id", "target")
+		ifrm.setAttribute("allow","autoplay")
+		ifrm.setAttribute("frameborder","0")
+		ifrm.setAttribute('allowFullScreen', '')
+		ifrm.setAttribute('picture-in-picture', '')
 		$("<style>").text("#target { position: absolute; top: 0px; left: 14%; width: 72%; left: 14%; height: 55%; background: none repeat scroll 0% 0%; }").appendTo("body");
 		iDiv.appendChild(ifrm);
 		var divFirst = document.getElementById("target")
@@ -169,8 +173,8 @@ function playsong()
 
 function removeIFrame() {
 	window.songpicked = ""
-        var frame = document.getElementById("target");
-        frame.parentNode.removeChild(frame);
+        var frame = document.getElementById("block");
+        frame.parentNode.removeChild(div);
     }
 
 
