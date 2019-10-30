@@ -112,11 +112,15 @@ function playsong()
 		var searchResult = response.result;
     		var firstVideo = searchResult.items[0]
 		var url = "https://www.youtube.com/embed/"+(firstVideo.id.videoId).toString()+"?autoplay=1&enablejsapi=1&list=RD"+(firstVideo.id.videoId).toString()+"&start_radio=1"	
-		var iDiv = document.createElement('div');
-		iDiv.id = 'block';
-		iDiv.className = 'youtube-player';
-		$("<style>").text("#block { position: relative; padding-bottom: 60%; height: 0px; margin: 1em 0px; }").appendTo("body");
-		document.getElementsByTagName('body')[0].appendChild(iDiv);
+		var iDiv = document.getElementById('block')
+		if(!iDiv)
+		{
+			var iDiv = document.createElement('div');
+			iDiv.id = 'block';
+			iDiv.className = 'youtube-player';
+			$("<style>").text("#block { position: relative; padding-top: 56.25%; }").appendTo("head");
+			document.getElementsByTagName('body')[0].appendChild(iDiv);
+		}
 		var ifrm = document.createElement("iframe")
         	ifrm.setAttribute("src", url)
 		ifrm.setAttribute("id", "target")
@@ -124,7 +128,7 @@ function playsong()
 		ifrm.setAttribute("frameborder","0")
 		ifrm.setAttribute('allowFullScreen', '')
 		ifrm.setAttribute('picture-in-picture', '')
-		$("<style>").text("#target { position: absolute; top: 0px; left: 14%; width: 72%; left: 14%; height: 55%; background: none repeat scroll 0% 0%; }").appendTo("body");
+		$("<style>").text("#target { position: absolute; top: 0px; left: 0px; width: 100%; left: 0px; height: 100%; }").appendTo("head");
 		iDiv.appendChild(ifrm);
 		var divFirst = document.getElementById("target")
 		divFirst.scrollIntoView()
