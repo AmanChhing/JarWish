@@ -114,7 +114,7 @@ function playsong()
     			var firstVideo = searchResult.items[0]
 			//alert(firstVideo.id.videoId)
 			//https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1
-			var url = "https://www.youtube.com/embed/"+(firstVideo.id.videoId).toString()+"?autoplay=1&enablejsapi=1&list="+(firstVideo.id.videoId).toString()+"&start_radio=1"
+			var url = "https://www.youtube.com/embed/"+(firstVideo.id.videoId).toString()+"?autoplay=1&enablejsapi=1&list=RD"+(firstVideo.id.videoId).toString()+"&start_radio=1"
 			//alert(url)
 			//var videoid = "HtvwcJLqxE0"
 			//var url = "https://www.youtube.com/embed/"+videoid+"?autoplay=1"
