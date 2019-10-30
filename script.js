@@ -118,17 +118,18 @@ function playsong()
 			var iDiv = document.createElement('div');
 			iDiv.id = 'block';
 			iDiv.className = 'youtube-player';
-			$("<style>").text("#block { position: relative; padding-top: 56.25%; }").appendTo("head");
+			$("<style>").text("#youtube-playe { position: relative; padding-top: 56.25%; }").appendTo("head");
 			document.getElementsByTagName('body')[0].appendChild(iDiv);
 		}
 		var ifrm = document.createElement("iframe")
         	ifrm.setAttribute("src", url)
 		ifrm.setAttribute("id", "target")
+		ifrm.className = 'iframeclass';
 		ifrm.setAttribute("allow","autoplay")
 		ifrm.setAttribute("frameborder","0")
 		ifrm.setAttribute('allowFullScreen', '')
 		ifrm.setAttribute('picture-in-picture', '')
-		$("<style>").text("#target { position: absolute; top: 0px; left: 0px; width: 100%; left: 0px; height: 100%; }").appendTo("head");
+		$("<style>").text("#iframeclass { position: absolute; top: 0px; left: 0px; width: 100%; left: 0px; height: 100%; }").appendTo("head");
 		iDiv.appendChild(ifrm);
 		var divFirst = document.getElementById("target")
 		divFirst.scrollIntoView()
