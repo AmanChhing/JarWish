@@ -108,39 +108,61 @@ function playsong()
     		});
   	}).then(function(response) 
 		{
-  			var searchResult = response.result;
+		
+		var searchResult = response.result;
+    		var firstVideo = searchResult.items[0]
+		var url = "https://www.youtube.com/embed/"+(firstVideo.id.videoId).toString()+"?autoplay=1&enablejsapi=1&list=RD"+(firstVideo.id.videoId).toString()+"&start_radio=1"	
+		var iDiv = document.createElement('div');
+		iDiv.id = 'block';
+		iDiv.className = 'youtube-player';
+		$("<style>").text("#block { position: relative; padding-bottom: 60%; height: 0px; margin: 1em 0px; }").appendTo("body");
+		document.getElementsByTagName('body')[0].appendChild(iDiv);
+		var ifrm = document.createElement("iframe")
+        	ifrm.setAttribute("src", url)
+		ifrm.setAttribute("id", "target")
+		$("<style>").text("#target { position: absolute; top: 0px; left: 14%; width: 72%; left: 14%; height: 55%; background: none repeat scroll 0% 0%; }").appendTo("body");
+		iDiv.appendChild(ifrm);
+		var divFirst = document.getElementById("target")
+		divFirst.scrollIntoView()
+		
+		
+
+		
+		
+		
+  			//var searchResult = response.result;
     			//$('#search-results').append(JSON.stringify(searchResult, null, 4))
   			//console.log(searchResult.items[0])
-    			var firstVideo = searchResult.items[0]
+    			//var firstVideo = searchResult.items[0]
 			//alert(firstVideo.id.videoId)
 			//https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1
-			var url = "https://www.youtube.com/embed/"+(firstVideo.id.videoId).toString()+"?autoplay=1&enablejsapi=1&list=RD"+(firstVideo.id.videoId).toString()+"&start_radio=1"
+			//var url = "https://www.youtube.com/embed/"+(firstVideo.id.videoId).toString()+"?autoplay=1&enablejsapi=1&list=RD"+(firstVideo.id.videoId).toString()+"&start_radio=1"
 			//alert(url)
 			//var videoid = "HtvwcJLqxE0"
 			//var url = "https://www.youtube.com/embed/"+videoid+"?autoplay=1"
-			var ifrm = document.createElement("iframe")
-        		ifrm.setAttribute("src", url)
-			ifrm.setAttribute("allow","autoplay")
-			ifrm.setAttribute("frameborder","0")
-			ifrm.setAttribute('allowFullScreen', '')
-			ifrm.setAttribute('picture-in-picture', '')
-			ifrm.setAttribute("id", "target")
-        		ifrm.style.width = "75%"
-        		ifrm.style.height = "400px"
-			ifrm.style.position = 'relative'
-			ifrm.style.top ='20%'
-			ifrm.style.left='13%'
-			ifrm.style.bottom ='5%'
-			ifrm.style.right='12%'
-        		document.body.appendChild(ifrm)
-			var divFirst = document.getElementById("target")
-			divFirst.scrollIntoView()
+			//var ifrm = document.createElement("iframe")
+        		//ifrm.setAttribute("src", url)
+			//ifrm.setAttribute("allow","autoplay")
+			//ifrm.setAttribute("frameborder","0")
+			//ifrm.setAttribute('allowFullScreen', '')
+			//ifrm.setAttribute('picture-in-picture', '')
+			//ifrm.setAttribute("id", "target")
+        		//ifrm.style.width = "75%"
+        		//ifrm.style.height = "400px"
+			//ifrm.style.position = 'relative'
+			//ifrm.style.top ='20%'
+			//ifrm.style.left='13%'
+			//ifrm.style.bottom ='5%'
+			//ifrm.style.right='12%'
+        		//document.body.appendChild(ifrm)
+			//var divFirst = document.getElementById("target")
+			//divFirst.scrollIntoView()
 			//window.songpicked = ""
-    	//firstVideo.url = 'https://youtube.com/watch?v=${firstVideo.id.videoId}'
-	//alert(firstVideo.url)
-    	//$('#first-video').text(firstVideo.url).attr('href', firstVideo.url)
-    	//$('#first-video-title').text(firstVideo.snippet.title)
-    	//$('#first-video-description').text(firstVideo.snippet.description)
+    			//firstVideo.url = 'https://youtube.com/watch?v=${firstVideo.id.videoId}'
+			//alert(firstVideo.url)
+    			//$('#first-video').text(firstVideo.url).attr('href', firstVideo.url)
+    			//$('#first-video-title').text(firstVideo.snippet.title)
+    			//$('#first-video-description').text(firstVideo.snippet.description)
   		});
 
 }
