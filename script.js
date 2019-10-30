@@ -118,7 +118,7 @@ function playsong()
 			var iDiv = document.createElement('div');
 			iDiv.id = 'block';
 			iDiv.className = 'youtube-player';
-			$("<style>").text("#youtube-playe { position: relative; padding-top: 56.25%; }").appendTo("head");
+			$("<style>").text("#youtube-player { position: relative; padding-top: 56.25%; }").appendTo("head");
 			document.getElementsByTagName('body')[0].appendChild(iDiv);
 		}
 		var ifrm = document.createElement("iframe")
