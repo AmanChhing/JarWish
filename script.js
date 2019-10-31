@@ -129,7 +129,7 @@ function playsong()
 		ifrm.setAttribute("frameborder","0")
 		ifrm.setAttribute('allowFullScreen', '')
 		ifrm.setAttribute('picture-in-picture', '')
-		$("<style>").text("#target { position: absolute; top: 0px; left: 0px; width: 80%; left: 0px; height: 70%; }").appendTo("head");
+		$("<style>").text("#target { position: absolute; top: 0px; left: 0px; width: 70%; left: 0px; height: 70%; }").appendTo("head");
 		iDiv.appendChild(ifrm);
 		var divFirst = document.getElementById("target")
 		divFirst.scrollIntoView()
