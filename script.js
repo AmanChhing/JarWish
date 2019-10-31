@@ -118,7 +118,7 @@ function playsong()
 			var iDiv = document.createElement('div');
 			iDiv.id = 'block';
 			iDiv.className = 'youtube-player';
-			$("<style>").text("#block { position: relative; padding-top: 56.25%; left: 12%; right:10%;  }").appendTo("head");
+			$("<style>").text("#block { position: relative; padding-top: 56.25%; left: 15%; right:10%;  }").appendTo("head");
 			document.getElementsByTagName('body')[0].appendChild(iDiv);
 		}
 		var ifrm = document.createElement("iframe")
@@ -129,7 +129,7 @@ function playsong()
 		ifrm.setAttribute("frameborder","0")
 		ifrm.setAttribute('allowFullScreen', '')
 		ifrm.setAttribute('picture-in-picture', '')
-		$("<style>").text("#target { position: absolute; top: 0px; left: 0px; width: 70%; left: 0px; height: 70%; }").appendTo("head");
+		$("<style>").text("#target { position: absolute; top: 0px; left: 0px; width: 70%; height: 70%; }").appendTo("head");
 		iDiv.appendChild(ifrm);
 		var divFirst = document.getElementById("target")
 		divFirst.scrollIntoView()
