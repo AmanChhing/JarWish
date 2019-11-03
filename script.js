@@ -13,7 +13,7 @@ var recognition = new SpeechRecognition();
 recognition.lang = 'en-US';
 recognition.interimResults = false;
 recognition.maxAlternatives = 1;
-
+say("Hi there, i am Jarvis music. tell me to play anything and i will do so.")
 
 
 document.querySelector('button').addEventListener('click', () => {
