@@ -72,18 +72,21 @@ function playsongornot(data)
 		if(window.songpicked != "")
 		{
 			outputBot.textContent = "Sure, Playing the song : " + window.songpicked
+			say("Sure, Playing the song : " + window.songpicked)
 			gapi.load('client', playsong)
 			
 		}
 		else
 		{
 		outputBot.textContent = "I'm sorry, i couldn't hear the song name properly, please repeat again."
+		say("I'm sorry, i couldn't hear the song name properly, please repeat again.")
 		}
 		
 	}
 	else
 	{
 	outputBot.textContent = "I'm sorry, for now i can play only music. tell me to play anything and i will do so."
+		say("I'm sorry, for now i can play only music. tell me to play anything and i will do so.")
 	}
 	
 }
@@ -182,6 +185,19 @@ function removeIFrame() {
         //frame.parentNode.removeChild(div);
 	frame.removeChild(target);
     }
+
+function say(m) {
+  var msg = new SpeechSynthesisUtterance();
+  var voices = window.speechSynthesis.getVoices();
+  msg.voice = voices[10];
+  msg.voiceURI = "native";
+  msg.volume = 1;
+  msg.rate = 1;
+  msg.pitch = 0.8;
+  msg.text = m;
+  msg.lang = 'hi-IN';
+  speechSynthesis.speak(msg);
+}
 
 
 
